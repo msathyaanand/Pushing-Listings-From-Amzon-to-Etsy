@@ -1,0 +1,30 @@
+import mysql.connector
+
+# Establish a connection to the MySQL database
+cnx = mysql.connector.connect(
+    host='localhost',
+    user='your_username',
+    password='your_password',
+    database='your_database'
+)
+
+# Create a cursor object to execute SQL queries
+cursor = cnx.cursor()
+
+# Execute a SELECT query
+query = 'SELECT * FROM your_table'
+cursor.execute(query)
+
+# Fetch all rows from the result set
+rows = cursor.fetchall()
+
+# Iterate over the rows and process the data
+for row in rows:
+    # Access the data in each column
+    column1 = row[0]
+    column2 = row[1]
+    # Perform further processing as needed
+
+# Close the cursor and database connection
+cursor.close()
+cnx.close()
